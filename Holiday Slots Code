@@ -1,0 +1,164 @@
+var drawBitmojiHead = function(bitmojiX,bitmojiY,bitmojiHeight){
+
+    noStroke();
+    fill(255,205,148);//skin tone
+    ellipse(bitmojiX+0*bitmojiHeight/100,bitmojiY-100*bitmojiHeight/100,100*bitmojiHeight/100,125*bitmojiHeight/100);//face
+    fill(227, 254, 255);//white, for chisel
+    //arc(bitmojiX-56*bitmojiHeight/100,bitmojiY-29*bitmojiHeight/100,61*bitmojiHeight/100,121*bitmojiHeight/100,-180+0*bitmojiHeight/100,0*bitmojiHeight/100);//left chisel
+    //arc(bitmojiX+59*bitmojiHeight/100,bitmojiY-29*bitmojiHeight/100,61*bitmojiHeight/100,121*bitmojiHeight/100,-180+0*bitmojiHeight/100,0*bitmojiHeight/100);//right chisel
+    fill(2, 103, 191);//hat color
+    arc(bitmojiX+1*bitmojiHeight/100,bitmojiY-140*bitmojiHeight/100,85*bitmojiHeight/100,82*bitmojiHeight/100,-180+0*bitmojiHeight/100,0*bitmojiHeight/100);//main part of hat
+    fill(161, 161, 161);//color of the brim of hat
+    arc(bitmojiX+1*bitmojiHeight/100,bitmojiY-138*bitmojiHeight/100,85*bitmojiHeight/100,30*bitmojiHeight/100,-180+0*bitmojiHeight/100,0*bitmojiHeight/100);//brim of hat
+    fill(255, 205, 148);//skin tone
+    arc(bitmojiX+1*bitmojiHeight/100,bitmojiY-130*bitmojiHeight/100,85*bitmojiHeight/100,30*bitmojiHeight/100,-180+0*bitmojiHeight/100,0*bitmojiHeight/100);//arc to end brim 
+
+    fill(107, 34, 3);//hair color
+    quad(bitmojiX-45*bitmojiHeight/100,bitmojiY-100*bitmojiHeight/100,bitmojiX-35*bitmojiHeight/100,bitmojiY-132*bitmojiHeight/100,bitmojiX-40*bitmojiHeight/100,bitmojiY-140*bitmojiHeight/100,bitmojiX-58*bitmojiHeight/100,bitmojiY-101*bitmojiHeight/100);//left hair
+    quad(bitmojiX+45*bitmojiHeight/100,bitmojiY-100*bitmojiHeight/100,bitmojiX+35*bitmojiHeight/100,bitmojiY-132*bitmojiHeight/100,bitmojiX+40*bitmojiHeight/100,bitmojiY-140*bitmojiHeight/100,bitmojiX+58*bitmojiHeight/100,bitmojiY-101*bitmojiHeight/100);//right hair
+
+    stroke(0, 0, 0);//eye outline
+    fill(255, 255, 255);//white eye color
+    ellipse(bitmojiX-18*bitmojiHeight/100,bitmojiY-117*bitmojiHeight/100,18*bitmojiHeight/100,13*bitmojiHeight/100);//left eye
+    ellipse(bitmojiX+18*bitmojiHeight/100,bitmojiY-117*bitmojiHeight/100,18*bitmojiHeight/100,13*bitmojiHeight/100);//right eye
+
+    noStroke();//no border for pupil
+    fill(0, 158, 3);//green eyes
+    ellipse(bitmojiX-18*bitmojiHeight/100,bitmojiY-117*bitmojiHeight/100,5*bitmojiHeight/100,5*bitmojiHeight/100);//left pupil
+    ellipse(bitmojiX+18*bitmojiHeight/100,bitmojiY-117*bitmojiHeight/100,5*bitmojiHeight/100,5*bitmojiHeight/100);//right pupil
+
+    stroke(0, 0, 0);//outline of nose
+    fill(255, 205, 148);//skin color, for nose
+    bezier(bitmojiX+0*bitmojiHeight/100,bitmojiY-100*bitmojiHeight/100,bitmojiX+21*bitmojiHeight/100,bitmojiY-78*bitmojiHeight/100,bitmojiX-8*bitmojiHeight/100,bitmojiY-80*bitmojiHeight/100,bitmojiX-4*bitmojiHeight/100,bitmojiY-85*bitmojiHeight/100);//nose
+
+    fill(255, 255, 255);//teeth
+    arc(bitmojiX+0*bitmojiHeight/100,bitmojiY-67*bitmojiHeight/100,40*bitmojiHeight/100,20*bitmojiHeight/100,0*bitmojiHeight/100,180+0*bitmojiHeight/100);//mouth outline
+    line(bitmojiX-20*bitmojiHeight/100,bitmojiY-67*bitmojiHeight/100,bitmojiX+20*bitmojiHeight/100,bitmojiY-67*bitmojiHeight/100);//top of mouth
+
+    noStroke();
+    fill(107, 34, 3);//eyebrow color
+    quad(bitmojiX-29*bitmojiHeight/100,bitmojiY-127*bitmojiHeight/100,bitmojiX-29*bitmojiHeight/100,bitmojiY-132*bitmojiHeight/100,bitmojiX-6*bitmojiHeight/100,bitmojiY-132*bitmojiHeight/100,bitmojiX-6*bitmojiHeight/100,bitmojiY-127*bitmojiHeight/100);//left eyebrow
+    quad(bitmojiX+7*bitmojiHeight/100,bitmojiY-127*bitmojiHeight/100,bitmojiX+7*bitmojiHeight/100,bitmojiY-132*bitmojiHeight/100,bitmojiX+30*bitmojiHeight/100,bitmojiY-132*bitmojiHeight/100,bitmojiX+30*bitmojiHeight/100,bitmojiY-127*bitmojiHeight/100);//right eyebrow
+};
+var drawBitmojiBody = function(bitmojiX,bitmojiY,bitmojiHeight,bitmojiInitials,bitmojiShirt){
+    noStroke();
+    fill(bitmojiShirt);//green shirt
+//shirt
+    quad(bitmojiX+55*bitmojiHeight/100,bitmojiY-39*bitmojiHeight/100,bitmojiX+55*bitmojiHeight/100,bitmojiY+0*bitmojiHeight/100,bitmojiX-50*bitmojiHeight/100,bitmojiY+0*bitmojiHeight/100,bitmojiX-50*bitmojiHeight/100,bitmojiY-39*bitmojiHeight/100);//middle shirt
+    arc(bitmojiX-48*bitmojiHeight/100,bitmojiY-20*bitmojiHeight/100,22*bitmojiHeight/100,40*bitmojiHeight/100,90+0*bitmojiHeight/100,360+0*bitmojiHeight/100);//left side of shirt
+    arc(bitmojiX+52*bitmojiHeight/100,bitmojiY-20*bitmojiHeight/100,22*bitmojiHeight/100,40*bitmojiHeight/100,-180+0*bitmojiHeight/100,90+0*bitmojiHeight/100);//right side of shirt
+//bottom part of shirt
+    fill(255,205,148);//skin color
+    ellipse(bitmojiX+0*bitmojiHeight/100,bitmojiY-38*bitmojiHeight/100,74*bitmojiHeight/100,13*bitmojiHeight/100);//neck or shirt collar
+
+if(bitmojiInitials===true){
+    textAlign(CENTER);
+    fill(255, 255, 255);//text color
+    textSize(20*bitmojiHeight/100);
+    text("MP",bitmojiX+0*bitmojiHeight/100,bitmojiY-11*bitmojiHeight/100);//initials
+} 
+};
+
+// I used an if statement for bitmojiInitials. If it is true, the initials will be displayed on the shirt. If it is false, the initials will not be displayed on the shirt
+
+var bitmojiObject = function(x,y,height,initials,shirtColor){
+    this.x=x;
+    this.y=y;
+    this.height=height;
+    this.initials=initials;
+    this.shirtColor=shirtColor;
+};
+
+//Here I defined the object using a variable bitmojiObject. The parameters relate to the x position, y position, height, if there are initials, and the shirt color of the bitmoji. As you can see, the properties are initially defined, with the help of keyword this.
+
+//Here I made a new instances of the bitmojiObject
+
+var drawBitmoji = function(bitmoji){
+    drawBitmojiHead(bitmoji.x,bitmoji.y,bitmoji.height);
+    drawBitmojiBody(bitmoji.x,bitmoji.y,bitmoji.height,bitmoji.initials,bitmoji            .shirtColor);
+};
+
+var drawBitmojiHead1 = function(bodyX,bodyY,bodyHeight) {
+    noStroke();
+    fill(250, 199, 145);
+    rect(bodyX-24*bodyHeight/150,bodyY+61*bodyHeight/150,50*bodyHeight/150,30*bodyHeight/150); //neck
+    
+    noStroke();
+    fill(255,205, 148);
+    ellipse (bodyX+0*(bodyHeight/150),bodyY+0*(bodyHeight/150),106*(bodyHeight/150),140*(bodyHeight/150)); //head
+    
+    noStroke();
+    fill(3,33,84);
+    //arc(bodyX-50*(bodyHeight/150),bodyY+45*(bodyHeight/150),28*(bodyHeight/150),55*(bodyHeight/150),0+0*(bodyHeight/150),360+0*(bodyHeight/150)); //left chisel
+    //arc(bodyX+50*(bodyHeight/150),bodyY+45*(bodyHeight/150),28*(bodyHeight/150),55*(bodyHeight/150),0*(bodyHeight/150),360+0*(bodyHeight/150)); //right chisel
+
+    fill(5, 5, 5);
+    arc(bodyX+0*(bodyHeight/150),bodyY-25*(bodyHeight/150),100*(bodyHeight/150),100*(bodyHeight/150),180+0*(bodyHeight/150),360+0*(bodyHeight/150)); //hat
+    
+    fill(186, 146, 78);
+    arc(bodyX+0*(bodyHeight/150),bodyY-35*(bodyHeight/150),50*(bodyHeight/150),30*(bodyHeight/150),180+0*(bodyHeight/150),360+0*(bodyHeight/150)); //hat hole
+    
+    rect(bodyX-51*(bodyHeight/150),bodyY-24*(bodyHeight/150),10*(bodyHeight/150),30*(bodyHeight/150)); //left sideburn
+    rect(bodyX+41*(bodyHeight/150),bodyY-25*(bodyHeight/150),10*(bodyHeight/150),30*(bodyHeight/150)); //right sideburn
+
+    fill(255, 255, 255);
+    ellipse (bodyX-20*(bodyHeight/150),bodyY-10*(bodyHeight/150),20*(bodyHeight/150),20*(bodyHeight/150)); //left eye
+    ellipse (bodyX+20*(bodyHeight/150),bodyY-10*(bodyHeight/150),20*(bodyHeight/150),20*(bodyHeight/150)); //right eye
+    
+    fill(51, 162, 222);
+    ellipse (bodyX-20*(bodyHeight/150),bodyY-10*(bodyHeight/150),8*(bodyHeight/150),8*(bodyHeight/150)); //left pupil
+    ellipse (bodyX+20*(bodyHeight/150),bodyY-10*(bodyHeight/150),8*(bodyHeight/150),8*(bodyHeight/150)); //right pupil
+    
+    strokeWeight(4);
+    stroke(250, 245, 245);
+    fill(201, 62, 129); 
+    arc(bodyX+0*(bodyHeight/150),bodyY+30*(bodyHeight/150),40*(bodyHeight/150),45*(bodyHeight/150),1+0*(bodyHeight/150),180+0*(bodyHeight/150)); //mouth
+    
+    noStroke();
+    fill(255, 255, 255);
+    rect(bodyX-20*(bodyHeight/150),bodyY+28*(bodyHeight/150),40*(bodyHeight/150),4*(bodyHeight/150)); //top teeth
+    
+    strokeWeight(1.5);
+    stroke(5, 5, 5);
+    fill(255,205, 148);
+    bezier(bodyX+0*(bodyHeight/150),bodyY+0*(bodyHeight/150),bodyX+21*(bodyHeight/150),bodyY+22*(bodyHeight/150),bodyX-8*(bodyHeight/150),bodyY+20*(bodyHeight/150),bodyX-4*(bodyHeight/150),bodyY+15*(bodyHeight/150)); //nose
+    
+    stroke(97, 84, 45);
+    fill(255,205, 148);
+    arc(bodyX-20*(bodyHeight/150),bodyY-19*(bodyHeight/150),25*(bodyHeight/150),10*(bodyHeight/150),180+0*(bodyHeight/150),360+0*(bodyHeight/150)); //left eyebrow
+    arc(bodyX+20*(bodyHeight/150),bodyY-19*(bodyHeight/150),25*(bodyHeight/150),10*(bodyHeight/150),180+0*(bodyHeight/150),360+0*(bodyHeight/150)); //right eyebrow
+};
+
+// added two new parametrs to body function
+var drawBitmojiBody1 = function (bodyX,bodyY,bodyHeight,shirtColor,initials) {
+fill(shirtColor);
+rect(bodyX-46*(bodyHeight/150),bodyY+92*(bodyHeight/150),100*(bodyHeight/150),150*(bodyHeight/150));//shirt
+
+triangle(bodyX-100*(bodyHeight/150),bodyY+160*(bodyHeight/150),bodyX-46*(bodyHeight/150),bodyY+93*(bodyHeight/150),bodyX-46*(bodyHeight/150),bodyY+160*(bodyHeight/150)); //left sleeve
+triangle(bodyX+54*(bodyHeight/150),bodyY+92*(bodyHeight/150),bodyX+54*(bodyHeight/150),bodyY+156*(bodyHeight/150),bodyX+110*(bodyHeight/150),bodyY+156*(bodyHeight/150)); //right sleeve
+
+if (initials === true) {
+    fill(252, 252, 252);
+    textSize(40*(bodyHeight/150));
+    text("AC",bodyX-24*(bodyHeight/150),bodyY+151*(bodyHeight/150));
+}
+// created a conditional - the initials are only drawn if initials is true
+};
+
+var bitmojiObject1 = function(x,y,h,shirtColor,initials){
+    this.x = x;
+    this.y = y;
+    this.h = h;
+    this.shirtColor = shirtColor;
+    this.initials = initials;
+};
+//first, i defined the contrusctor function. this function will be used when i want to create a new version of my bitmoji with different properties.
+
+var drawBitmoji1 = function (bitmojiObject){
+    drawBitmojiHead1 (bitmojiObject.x , bitmojiObject.y , bitmojiObject.h);
+    drawBitmojiBody1 (bitmojiObject.x , bitmojiObject.y , bitmojiObject.h, bitmojiObject.shirtColor , bitmojiObject.initials);
+};
+
+
+//Here is defined variable drawBitmoji with one parameter- bitmoji. I then used this to call the drawBitmojiHead and drawBitmojiBody functions. Both are in terms of bitmoji.x,bitmoji.y,bitmoji.height, which makes it easy to create bitmojis with new locations and sizes through the use of objects (used below). drawBitmojiBody also used bitmoji.initial and bitmoji.shirtColor, because the initials and shirt are both part of the drawBitmojiBody function. 
+
